@@ -17,7 +17,7 @@
 ---
 
 ## 📌 Project Overview
-[cite_start]This repository documents my **Week 6 Machine Learning Internship tasks**, focused on **Clustering & Unsupervised Learning**. 
+This repository documents my **Week 6 Machine Learning Internship tasks**, focused on **Clustering & Unsupervised Learning**. 
 It includes implementations of **K-Means, Hierarchical Clustering, DBSCAN, and Dimensionality Reduction (PCA & t-SNE)**, along with model evaluation, visualizations, and comparative analysis.
 
 ---
@@ -35,17 +35,15 @@ It includes implementations of **K-Means, Hierarchical Clustering, DBSCAN, and D
 
 ## ✅ Task Details
 
-### [cite_start]**Task 6.1: K-Means Clustering** [cite: 2]
+### **Task 6.1: K-Means Clustering** - **Dataset:** Iris (`sklearn.datasets.load_iris`)
+- **Steps Implemented:** - Imported KMeans from `sklearn.cluster`.
+  - Implemented the Elbow Method by calculating inertia for K=2 to 10.
+  - Calculated and plotted the Silhouette Score for each K.
+  - Reduced dimensionality to 2D using PCA and visualized the clusters.
+  - Compared model initialization using `init='random'` vs `init='k-means++'`.
+  - Created cluster profile statistics and saved the cluster labels with the original data.
 
-- **Dataset:** Iris (`sklearn.datasets.load_iris`)
-- [cite_start]**Steps Implemented:** - Imported KMeans from `sklearn.cluster`[cite: 6].
-  - [cite_start]Implemented the Elbow Method by calculating inertia for K=2 to 10[cite: 8].
-  - [cite_start]Calculated and plotted the Silhouette Score for each K[cite: 10, 11].
-  - [cite_start]Reduced dimensionality to 2D using PCA and visualized the clusters[cite: 12, 13].
-  - [cite_start]Compared model initialization using `init='random'` vs `init='k-means++'`[cite: 14].
-  - [cite_start]Created cluster profile statistics and saved the cluster labels with the original data[cite: 15, 16].
-
-[cite_start]**Files:** `kmeans_clustering.py`, `iris_with_clusters.csv` [cite: 3]
+**Files:** `kmeans_clustering.py`, `iris_with_clusters.csv` 
 
 **Visuals:** Elbow Curve & Silhouette Scores 
 ![Elbow Curve](figures/Figure_1.png) 
@@ -55,16 +53,14 @@ K-Means Clusters Visualized in 2D (PCA)
 
 ---
 
-### [cite_start]**Task 6.2: Hierarchical Clustering & Dendrograms** [cite: 17]
+### **Task 6.2: Hierarchical Clustering & Dendrograms** - **Dataset:** Iris (`sklearn.datasets.load_iris`) 
+- **Steps Implemented:** - Imported `AgglomerativeClustering` and dendrogram/linkage tools from SciPy.
+  - Scaled the dataset and created linkage matrices.
+  - Plotted dendrograms using different linkage methods: 'ward', 'single', 'complete', and 'average'.
+  - Determined the optimal number of clusters by visual inspection of dendrogram heights.
+  - Visualized the resulting clusters with PCA and compared the silhouette scores with K-Means results.
 
-- **Dataset:** Iris (`sklearn.datasets.load_iris`) 
-- [cite_start]**Steps Implemented:** - Imported `AgglomerativeClustering` and dendrogram/linkage tools from SciPy[cite: 21, 22].
-  - [cite_start]Scaled the dataset and created linkage matrices[cite: 23, 24].
-  - [cite_start]Plotted dendrograms using different linkage methods: 'ward', 'single', 'complete', and 'average'[cite: 25, 26].
-  - [cite_start]Determined the optimal number of clusters by visual inspection of dendrogram heights[cite: 27].
-  - [cite_start]Visualized the resulting clusters with PCA and compared the silhouette scores with K-Means results[cite: 29, 30, 31].
-
-[cite_start]**Files:** `hierarchical_clustering.py` [cite: 18]
+**Files:** `hierarchical_clustering.py` 
 
 
 
@@ -73,34 +69,30 @@ Hierarchical Clustering Visualized in 2D (PCA)
 
 ---
 
-### [cite_start]**Task 6.3: DBSCAN & Density-Based Clustering** [cite: 32]
+### **Task 6.3: DBSCAN & Density-Based Clustering** - **Dataset:** Make Moons (Non-spherical clusters) 
+- **Steps Implemented:** - Imported DBSCAN from `sklearn.cluster`.
+  - Experimented with various `eps` values [0.1, 0.3, 0.5, 1.0] and `min_samples` [3, 5, 10].
+  - Identified noise points with `label=-1`.
+  - Visualized clusters with different colors and explicitly highlighted the noise points.
+  - Created side-by-side comparison plots showing DBSCAN vs K-Means on the same dataset.
+  - Documented scenarios explaining when to use DBSCAN versus K-Means.
 
-- [cite_start]**Dataset:** Make Moons (Non-spherical clusters) [cite: 37]
-- [cite_start]**Steps Implemented:** - Imported DBSCAN from `sklearn.cluster`[cite: 36].
-  - [cite_start]Experimented with various `eps` values [0.1, 0.3, 0.5, 1.0] and `min_samples` [3, 5, 10][cite: 38, 39].
-  - [cite_start]Identified noise points with `label=-1`[cite: 40].
-  - [cite_start]Visualized clusters with different colors and explicitly highlighted the noise points[cite: 41, 42].
-  - [cite_start]Created side-by-side comparison plots showing DBSCAN vs K-Means on the same dataset[cite: 44, 45].
-  - [cite_start]Documented scenarios explaining when to use DBSCAN versus K-Means[cite: 46].
-
-[cite_start]**Files:** `dbscan_clustering.py` [cite: 33]
+**Files:** `dbscan_clustering.py` 
 
 **Visuals:** DBSCAN vs K-Means Comparison
 ![DBSCAN vs KMeans](figures/dbscanvsKmeans.png) 
 
 ---
 
-### [cite_start]**Task 6.4: Dimensionality Reduction (PCA & t-SNE)** [cite: 47]
+### **Task 6.4: Dimensionality Reduction (PCA & t-SNE)** - **Dataset:** MNIST Digits 
+- **Steps Implemented:** - Imported PCA and TSNE from sklearn.
+  - Applied PCA to extract 50 components (`n_components=50`).
+  - Plotted the explained variance ratio and the cumulative explained variance.
+  - Reduced the dataset to 2D using both PCA and t-SNE, and created comparative scatter plots.
+  - Created 3D visualizations for both PCA and t-SNE projections.
+  - Trained a classifier on the original features vs the reduced features to compare accuracies and training times.
 
-- [cite_start]**Dataset:** MNIST Digits [cite: 53]
-- [cite_start]**Steps Implemented:** - Imported PCA and TSNE from sklearn[cite: 52].
-  - [cite_start]Applied PCA to extract 50 components (`n_components=50`)[cite: 54].
-  - [cite_start]Plotted the explained variance ratio and the cumulative explained variance[cite: 55, 56].
-  - [cite_start]Reduced the dataset to 2D using both PCA and t-SNE, and created comparative scatter plots[cite: 57, 58, 59].
-  - [cite_start]Created 3D visualizations for both PCA and t-SNE projections[cite: 60].
-  - [cite_start]Trained a classifier on the original features vs the reduced features to compare accuracies and training times[cite: 61, 62].
-
-[cite_start]**Files:** `dimensionality_reduction.py` [cite: 48]
+**Files:** `dimensionality_reduction.py` 
 
 
 ---
